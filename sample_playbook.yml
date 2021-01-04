@@ -3,11 +3,11 @@
   become: True
   tasks:
    - name: Install apache
-    yum:
+     yum:
       name: "apache"
       state: "present"
-   -name: start apache
-    service:
+   - name: start apache
+     service:
        name: apache
        state: started
        enabled: True
