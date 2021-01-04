@@ -1,13 +1,14 @@
 ---
- -name:play1
-  hosts:webserver
+- hosts: webserver
+  become: True
   tasks:
-   -name:install apache
+   - name: Install apache
     yum:
-      name:apache
-      state:present
-   -name:start apache
+      name: "apache"
+      state: "present"
+   -name: start apache
     service:
-       name:apache
-       state:start
----
+       name: apache
+       state: started
+       enabled: True
+...
