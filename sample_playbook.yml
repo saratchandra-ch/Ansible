@@ -1,0 +1,13 @@
+---
+ -name:play1
+  hosts:webserver
+  tasks:
+   -name:install apache
+    yum:
+      name:apache
+      state:present
+   -name:start apache
+    service:
+       name:apache
+       state:start
+---
